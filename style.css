@@ -1,0 +1,139 @@
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@200;300;400;500;600;700&display=swap");
+
+/* Reset default margin, padding, and box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "DM Sans", sans-serif; /* Apply the imported font to all elements */
+}
+
+/* Set up body styling */
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f4ff; /* Set background color */
+}
+
+/* Styling for text selection */
+::selection {
+  color: #fff;
+  background-color: #000;
+}
+
+/* Styling for the main container */
+.container {
+  padding: 2rem 7rem; /* Add padding to the container */
+  border-radius: 10px; /* Add border-radius to the container */
+  background: #fff; /* Set background color */
+  box-shadow: 0 5px 10px rgba(255, 255, 255, 0.1); /* Add box-shadow */
+}
+
+/* Styling for result images section */
+.result_images {
+  display: flex;
+  column-gap: 7rem; /* Set the gap between result images */
+}
+
+/* Animation for user result shake */
+.container.start .user_result {
+  transform-origin: left;
+  animation: userShake 0.7s ease infinite;
+}
+
+/* Keyframes for user shake animation */
+@keyframes userShake {
+  50% {
+    transform: rotate(10deg);
+  }
+}
+
+/* Animation for CPU result shake */
+.container.start .cpu_result {
+  transform-origin: right;
+  animation: cpuShake 0.7s ease infinite;
+}
+
+/* Keyframes for CPU shake animation */
+@keyframes cpuShake {
+  50% {
+    transform: rotate(-10deg);
+  }
+}
+
+/* Styling for result images */
+.result_images img {
+  width: 100px; /* Set the width of result images */
+}
+
+/* Styling for user result image rotation */
+.user_result img {
+  transform: rotate(90deg);
+}
+
+/* Styling for CPU result image rotation */
+.cpu_result img {
+  transform: rotate(-90deg) rotateY(180deg);
+}
+
+/* Styling for result text */
+.result {
+  text-align: center;
+  font-size: 2rem; /* Set font size for result text */
+  color: #de0d64; /* Set text color */
+  margin-top: 1.5rem; /* Set top margin */
+}
+
+/* Styling for option images */
+.option_image img {
+  width: 50px; /* Set the width of option images */
+}
+
+/* Styling for the option images section */
+.option_images {
+  display: flex;
+  align-items: center;
+  margin-top: 2.5rem; /* Set top margin for option images section */
+  justify-content: space-between;
+}
+
+/* Disable pointer events during game start */
+.container.start .option_images {
+  pointer-events: none;
+}
+
+/* Styling for individual option image */
+.option_image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.5; /* Set initial opacity */
+  cursor: pointer;
+  transition: opacity 0.3s ease; /* Add transition effect on opacity change */
+}
+
+/* Styling for option image hover effect */
+.option_image:hover {
+  opacity: 1;
+}
+
+/* Styling for active option image */
+.option_image.active {
+  opacity: 1;
+}
+
+/* Styling for option image content */
+.option_image img {
+  pointer-events: none;
+}
+
+/* Styling for option image text */
+.option_image p {
+  color: #3477eb; /* Set text color */
+  font-size: 1.235rem; /* Set font size for option image text */
+  margin-top: 1rem; /* Set top margin for option image text */
+  pointer-events: none;
+}
